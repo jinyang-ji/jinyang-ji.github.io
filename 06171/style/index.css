@@ -1,0 +1,223 @@
+@charset "utf-8";  /*문자 인코딩-유니코드 사용*/
+
+/*제목용 폰트 (어그로체)*/
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* {     /*모든 요소 공통*/
+    font-family: 'NanumSquareNeo';
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul {      /*모든 리스트 공통-부호/여백 제거*/
+    list-style: none;
+    padding: 0;
+}
+
+a {     /*모든 링크 공통-밑줄제거*/
+    text-decoration: none;
+}
+
+/*헤더영역-FullScreen*/
+#header {
+  
+    width: 100%; height: 100vh;
+
+    position: relative;    /*배치를 위한 기준*/
+    overflow: hidden;
+}
+
+
+#headerVideo {
+    position: absolute; /*헤더에 맞추기*/
+    top:50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*헤더를 기준으로 최소 100%채워보이기*/
+    min-width: 100%; min-height: 100%;
+}
+
+#headerTitle {
+    color: #fff;
+    font-size: 5vw;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute; /*헤더에 맞추기*/
+    top:50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#enquire {
+    position:absolute;
+    top:20px; right:20px;
+
+}
+
+#enquire1 {
+    color: #fff; font-size: 1.3em;
+    transition: .3s;
+}
+
+#enquire1:hover {
+    color: rgb(255, 199, 25);
+}
+
+#enquire2{
+    color: #fff; font-size: 1.3em;
+    transition: .3s;
+}
+
+#enquire2:hover {
+    background-color:rgb(134, 197, 197);
+    color: #000;
+}
+
+#navi {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 85%; height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#hamburger { /*모바일용 메뉴 버튼*/
+    background: none;
+    border: none;
+    color:#fff ; font-size: 2.5em;
+    cursor: pointer;
+    display: none; /*숨김 상태로 시작*/
+}
+
+#logo {
+    height: 40px; 
+    margin: 0 20px; 
+}
+
+#menu {
+    display: flex;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.main{     /*메인메뉴 리스트*/
+ position: relative;
+
+}
+
+.mainLink {     /*메인메뉴 링크*/
+    display: block;
+    color: #fff;
+    line-height: 40px;
+    padding: 0 1em;
+    transition: .3s;
+
+}
+
+.main:hover>.mainLink {
+    background: rgba(0, 0, 0, 0.3);
+
+}
+
+.sub {       /*서브메뉴-메인메뉴 아래에 배치*/
+    position: absolute;
+    top: 100%; left: 0;
+    width: 150%; min-width: 200px;
+    background: rgba(0, 0, 0, 0.1);
+    display: none;
+} 
+
+.main:hover> .sub { display: block; }
+
+.subLink {
+    display: block;
+    color: #87b630;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 5);
+    line-height: 30px;
+    padding: 0 1em; font-size: 0.8em;
+    transition: .3s;
+}
+
+.subLink:hover {
+     background: rgba(0, 0, 0, 0.2);
+}
+
+
+
+#searchBox {                      /*하단내용박스*/
+    position: absolute;
+    bottom:50px; left:50%;
+    transform: translateX(-50%);
+    border: 5px solid #e0dd1f;
+    width: 95%; max-width: 800px;
+    padding: 10px;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    transition: .3s;
+}
+
+#search {
+    font-size: 1.5em;
+    color: #e0dd1f;
+    width: 80px;
+}
+
+#searchTitle {
+    color: #fff;
+}
+
+#searchButton {
+    background: #fff; border: none;
+    padding: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#searchBox:hover {
+    background: #e0dd1f;
+}
+
+#searchBox:hover > #search { color: #fff;}
+#searchBox:hover > #searchButton {
+    background: #383838; color: #fff;
+}
+
+/*890px이하 화면용 스타일*/
+@media screen and (max-width: 890px) {
+    #hamburger {display: block;}  /*메뉴버튼 보이기*/
+    #menu {
+        display: block;
+        width: 200px;
+        position: absolute; top: 50px;
+    }
+
+   
+
+    .sub {    /*서브 메뉴-메인메뉴 옆으로 이동*/
+        top: 0; left: 100%;
+        width: 100%; min-width: 100%;
+    }
+
+    .sublink { line-height: 40px;}
+}
+/*850px이하 화면용 스타일*/
+@media screen and (max-width: 850px) {
+    #headerTitle {font-size: 7vw;}
+}
+
+
+/*450px이하 화면용 스타일*/
+@media screen and (max-width: 450px) {
+    #headerTitle {font-size: 10vw;}
+    #search {display: none;}    /*돋보기 아이콘 숨김*/
+    #searchTitle { font-size: 1rem;}
+    #searchButton {padding: 0.5rem;}
+}
+
