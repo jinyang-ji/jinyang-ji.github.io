@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+    @font-face {
+        font-family: 'SUIT-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+            * {             /*전체영역*/
+        font-family: 'NanumSquareNeo';
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+        ul { list-style: none; padding: 0;}
+        a {text-decoration: none;}
+
+        #header{
+
+        }
+
+        #navBox{     /*내비 박스 전체*/
+            width: 100%; height: 40px;
+            position: fixed;       /*화면에 고정*/
+            background:#FFD66B;       
+            top: 0; left: 0;
+            z-index: 9;
+        }
+
+         #navBox2{     /*1200 안쪽 박스*/
+            width: 100%; max-width: 1200px;
+            margin: auto; display: flex;
+        
+        }
+        #logo {      /*로고 박스*/ width: 60%; }
+        #navi {             /*내비게이션*/ width: 80%; }
+        #menu{           /*메뉴 리스트 박스 ul*/   display: flex; }
+
+        .main{
+            position: relative;
+        }
+        .mainlink {        /*각 메뉴 링크*/
+            
+            display: block;
+            line-height: 60px; padding: 0 1em;
+            color: #000;  font-family: 'SUIT-Regular';
+            font-size: 1em;
+            transition: 0.3s;
+            position: relative;
+           
+        }
+
+        .main:hover > .submenu { display: block;}
+        .mainlink {color: #000;}
+
+        .submenu {
+            font-family: 'SUIT-Regular';
+            position: absolute; top: 100%; left: 20%;
+            width: 150%; display: none;
+            z-index: 9;
+            background:#fff;
+             }
+
+        .sub { 
+            padding: 0.5em;
+             background: rgba(0, 0, 0, 0)
+        }
+         .sublink { font-size: 0.8em;  color: #000; }
+         .sublink:hover { color: #4300FF;}
+
+    
+         #slideBox {}
+
+      section {
+        width: 100%; max-width: 1200px;
+        margin: 100px auto; text-align: center;
+        }
+
+        /*이주의책*/
+         #book {
+            width: 100px;
+            text-align: left; padding-bottom: 0.5em;
+            color: #000;
+        }
+        #book:hover { 
+            background: hsl(241, 65%, 41%); color:#fff;
+        }
+         #listBox1 {
+
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1em;
+        }
+        .list1>img { padding-bottom: 1em;}
+        .book1 {font-size: 1em; padding-bottom: 0.5em; }
+        .book2 {font-size: 1em; color: #4300FF; }
+        .book3 {font-size: 0.8em;}
+
+        /*만권당tv*/
+        #secBox2 {text-align: left; }
+        .main2 {list-style: none; }
+        .main2link { 
+            color: #000; display: block;
+            padding: 0.5em 0; 
+            font-size: 1.5em;
+        }
+        .submenu2 {            
+            font-family: 'SUIT-Regular';
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1em;        
+        }
+        .Tv2 { }
+        .Tv2 >div {overflow: hidden; margin-bottom: 0.5em;}
+        .Tv2  h3, p {color: #000; }
+        .Tv2  img {  
+            width: 100%;    
+            display: block;
+            transition: 0.3s;}
+        .first:hover { transform: scale(1.1,1.1); }
+        
+        /*베스트셀러10*/
+        #sec3 { }
+        .list3>div { display: flex; align-items: center;
+         margin: 10px 0;}
+        #secBox3 {
+            width: 100%; max-width: 900px;
+            text-align: left;
+            width: 100%; 
+        }
+        #submenu3 {
+            font-family: 'SUIT-Regular';
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .main3 {list-style:none;}
+        .main3link {
+            color: #000;
+            font-size: 1.5em;
+            display: block;
+            padding-bottom: 0.5em ;
+        }
+        .list3 {
+        }
+        .book3 {height: 90px;     }
+        .booklist { padding: 1em 0; }
+        #fontawsome { 
+            display: flex; align-items: center;
+            margin-left: 1em;
+            font-size: 2em;
+        }
+        #fontawsome i {color: #000;}
